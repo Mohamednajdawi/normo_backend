@@ -5,7 +5,9 @@ from langchain_openai import ChatOpenAI
 from normo_backend.config import get_settings
 
 
-def get_default_chat_model(model: str = "gpt-4o-mini", temperature: float = 0.2) -> ChatOpenAI:
+def get_default_chat_model(
+    model: str = "gpt-4o-mini", temperature: float = 0.2
+) -> ChatOpenAI:
     settings = get_settings()
     return ChatOpenAI(
         model=model,

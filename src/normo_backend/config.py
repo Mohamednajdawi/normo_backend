@@ -7,6 +7,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     environment: Literal["development", "staging", "production"] = "development"
     openai_api_key: Optional[str] = None
+    log_level: Literal["debug", "info", "warning", "error", "critical"] = "info"
 
     class Config:
         env_file = ".env"
@@ -15,4 +16,4 @@ class Settings(BaseSettings):
 
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
-    return Settings() 
+    return Settings()

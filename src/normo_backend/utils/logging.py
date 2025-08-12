@@ -1,5 +1,5 @@
 import os
-from logging import Formatter, Logger, StreamHandler, getLogger, INFO
+from logging import INFO, Formatter, Logger, StreamHandler, getLogger
 from typing import Optional
 
 
@@ -20,4 +20,4 @@ def get_logger(name: Optional[str] = None) -> Logger:
         logger.setLevel(log_level)
         logger.propagate = False
 
-    return logger 
+    return logger

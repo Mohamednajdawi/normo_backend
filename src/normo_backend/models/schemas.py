@@ -4,7 +4,6 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
-
 Role = Literal["system", "user", "assistant", "tool"]
 
 
@@ -22,4 +21,4 @@ class ChatRequest(BaseModel):
 
 
 class ChatResponse(BaseModel):
-    message: ChatMessage 
+    message: ChatMessage
