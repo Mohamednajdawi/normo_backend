@@ -10,5 +10,10 @@ def planner_agent(state: AgentState) -> AgentState:
     prompt = PLANNER_SYSTEM_PROMPT.format(user_query=state.user_query)
     response = llm.invoke(prompt)
     state.steps = extract_json(response.content)["steps"]
-    print(state.steps)
+    state.memory.append(
+        {
+            "role": "planner_agent",
+            "content": state.steps,
+        }
+    )
     return state

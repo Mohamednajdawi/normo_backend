@@ -10,4 +10,10 @@ def meta_data_agent(state: AgentState) -> AgentState:
         prompt
     )
     state.meta_data = extract_json(response.content)["meta_data"]
+    state.memory.append(
+        {
+            "role": "meta_data_agent",
+            "content": state.meta_data,
+        }
+    )
     return state

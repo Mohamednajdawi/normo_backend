@@ -9,3 +9,5 @@ class AgentState(BaseModel):
     next_action: str = "planner"
     steps: List[str] = []
     meta_data: Dict[str, str] = {}
+    summary: str = ""
+    pdf_names: List[str] = []
